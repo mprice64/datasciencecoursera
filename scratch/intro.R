@@ -5,6 +5,7 @@ version
 install.packages("caret")
 install.packages("kernlab")
 install.packages("devtools")
+install.packages("knitr")
 
 library(devtools)
 install_github('rCharts', 'ramnathv')
