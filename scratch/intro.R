@@ -1,18 +1,6 @@
-# Install devtools from http://cran.r-project.org/bin/windows/Rtools/
-
-version
-
-install.packages("caret")
-install.packages("kernlab")
-install.packages("devtools")
-install.packages("knitr")
-
-library(devtools)
-install_github('rCharts', 'ramnathv')
-
 library(datasets)
 library(rCharts)
-
+library(KernSmooth)
 # Rcharts examples
 ## Example 1 Facetted Scatterplot
 names(iris) = gsub("\\.", "", names(iris))
@@ -49,3 +37,9 @@ testing <- spam[-inTrain, ]
 M <- abs(cor(training[, -58]))
 diag(M) <- 0
 which(M > 0.8, arr.ind = T)
+
+library(knitr)
+library(markdown)
+library(slidify)
+author("mydeck")
+slidify("index.Rmd")
